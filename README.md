@@ -10,9 +10,9 @@ For user to get historical market data as csv files, such as kline, trade data, 
 ## Kline
 The data fields of kline data as same as `/market/history/kline` REST API interface, and the data fields are as follows:
 
-| id | open | high | low | close | vol | amount |
-| -- | -- | -- | --| -- | --| --|
-| 1620748800 | 56047.34 | 57352.06 | 55749.73 | 57042.49 | 5.218369366635794E8 | 9222.601164750704 |
+| id | ts | open | high | low | close | vol | amount | count |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| 1620748800 | 1603695099234 | 56047.34 | 57352.06 | 55749.73 | 57042.49 | 5.218369366635794E8 | 9222.601164750704 | 13 |
 </br>
 
 ## Periods
@@ -34,9 +34,9 @@ The data fields of kline data as same as `/market/trade` REST API interface, and
 ## Kline
 The data fields of kline data as same as `/market/history/kline`(Futures), `/swap-ex/market/history/kline`(Swap), `/linear-swap-ex/market/history/kline`(Linear-Swap), `/option-ex/market/history/kline`(Options) REST API interface, and the data fields are as follows:
 
-| id | open | high | low | close | vol | amount |
-| -- | -- | -- | --| -- | --| --|
-| 1620748800 | 56146.4 | 57418.2 | 55868 | 57361.2 | 18101556 | 31926.0045740418288417736911359330675244168 |
+| id | ts | open | high | low | close | vol | amount | count | trade_turnover |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| 1620748800 | 1603695099234 | 56146.4 | 57418.2 | 55868 | 57361.2 | 18101556 | 31926.0045740418288417736911359330675244168 | 20 | 52.3072 |
 </br>
 
 ## Periods
@@ -56,17 +56,17 @@ The base url is `https://data.huobi.vision`
 </br></br>
 
 ## Kline csv file url as follow:
-`{base_url}/data/[spot|futures|swap|linear-swap|options]/[daily|monthly]/kline/{symbol}/{period}/{file}`
+`{base_url}/data/klines/[spot|futures|swap|linear-swap|options]/[daily|monthly]/{symbol}/{period}/{file}`
 </br>such as:</br>
-`https://data.huobi.vision/data/spot/daily/kline/HTUSDT/60min/HTUSDT-60min-2021-01-01.zip`</br>
-`https://data.huobi.vision/data/spot/monthly/kline/HTUSDT/60min/HTUSDT-60min-2021-01.zip`
+`https://data.huobi.vision/data/klines/spot/daily/HTUSDT/60min/HTUSDT-60min-2021-01-01.zip`</br>
+`https://data.huobi.vision/data/klines/spot/monthly/HTUSDT/60min/HTUSDT-60min-2021-01.zip`
 </br></br>
 
 ## Trade csv file url as follow:
-`{base_url}/data/[spot|futures|swap|linear-swap|options]/[daily|monthly]/trade/{symbol}/{file}`
+`{base_url}/data/trades/[spot|futures|swap|linear-swap|options]/[daily|monthly]/{symbol}/{file}`
 </br>such as:</br>
-`https://data.huobi.vision/data/swap/daily/trade/BTCUSDT/BTCUSDT-trade-2021-01-01.zip`</br>
-`https://data.huobi.vision/data/swap/monthly/trade/BTCUSDT/BTCUSDT-trade-2021-01.zip`
+`https://data.huobi.vision/data/trades/swap/daily/BTCUSDT/BTCUSDT-trade-2021-01-01.zip`</br>
+`https://data.huobi.vision/data/trades/swap/monthly/BTCUSDT/BTCUSDT-trade-2021-01.zip`
 </br></br>
 
 # How to download
@@ -76,10 +76,10 @@ There are python/shell scripts for one key downloading csv files
 ```shell
 
 # download a single file
-curl -s "https://data.huobi.vision/data/swap/daily/trade/BTCUSDT/BTCUSDT-trade-2021-01-01.zip" -o BTCUSDT-trade-2021-01-01.zip
+curl -s "https://data.huobi.vision/data/trades/swap/daily/BTCUSDT/BTCUSDT-trade-2021-01-01.zip" -o BTCUSDT-trade-2021-01-01.zip
 
 # or
-wget "https://data.huobi.vision/data/swap/daily/trade/BTCUSDT/BTCUSDT-trade-2021-01-01.zip"
+wget "https://data.huobi.vision/data/trades/swap/daily/BTCUSDT/BTCUSDT-trade-2021-01-01.zip"
 ```
 </br></br>
 
