@@ -10,9 +10,9 @@ For user to get historical market data as csv files, such as kline, trade data, 
 ## Kline
 The data fields of kline data as same as `/market/history/kline` REST API interface, and the data fields are as follows:
 
-| id | ts | open | high | low | close | vol | amount | count |
-| -- | -- | -- | -- | -- | -- | -- | -- | -- |
-| 1620748800 | 1603695099234 | 56047.34 | 57352.06 | 55749.73 | 57042.49 | 5.218369366635794E8 | 9222.601164750704 | 13 |
+| id | open | high | low | close | vol | amount | count |
+| -- | -- | -- | -- | -- | -- | -- | -- |
+| 1620748800 | 56047.34 | 57352.06 | 55749.73 | 57042.49 | 5.218369366635794E8 | 9222.601164750704 | 13 |
 </br>
 
 ## Periods
@@ -27,16 +27,16 @@ The data fields of kline data as same as `/market/trade` REST API interface, and
 | 102176219713 | 4268.68 | 0.0231 | 1620789069405 | buy |
 </br></br>
 
-# Futures/Swap/Linear-Swap/Options
+# Future/Swap/Linear-Swap/Option
 * `Kline`
 * `Trade`
 
 ## Kline
-The data fields of kline data as same as `/market/history/kline`(Futures), `/swap-ex/market/history/kline`(Swap), `/linear-swap-ex/market/history/kline`(Linear-Swap), `/option-ex/market/history/kline`(Options) REST API interface, and the data fields are as follows:
+The data fields of kline data as same as `/market/history/kline`(Future), `/swap-ex/market/history/kline`(Swap), `/linear-swap-ex/market/history/kline`(Linear-Swap), `/option-ex/market/history/kline`(Option) REST API interface, and the data fields are as follows:
 
-| id | ts | open | high | low | close | vol | amount | count | trade_turnover |
-| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
-| 1620748800 | 1603695099234 | 56146.4 | 57418.2 | 55868 | 57361.2 | 18101556 | 31926.0045740418288417736911359330675244168 | 20 | 52.3072 |
+| id | open | high | low | close | vol | amount | count | trade_turnover |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| 1620748800 | 56146.4 | 57418.2 | 55868 | 57361.2 | 18101556 | 31926.0045740418288417736911359330675244168 | 20 | 52.3072 |
 </br>
 
 ## Periods
@@ -45,7 +45,7 @@ Periods are supported as follows:
 </br></br>
 
 ## Trade
-The data fields of kline data as same as `/market/trade`(Futures), `/swap-ex/market/trade`(Swap), `/linear-swap-ex/market/trade`(Linear-Swap), `/option-ex/market/trade`(Options) REST API interface, and the data fields are as follows:
+The data fields of kline data as same as `/market/trade`(Future), `/swap-ex/market/trade`(Swap), `/linear-swap-ex/market/trade`(Linear-Swap), `/option-ex/market/trade`(Option) REST API interface, and the data fields are as follows:
 | id | price | amount | quantity | direction | ts |
 | -- | -- | -- | --| -- | -- |
 | 958050135700000 | 57657.4 | 62 | 0.1075317305324208167555248762517907502 | buy | 1620790956586 |
@@ -56,14 +56,14 @@ The base url is `https://data.huobi.vision`
 </br></br>
 
 ## Kline csv file url as follow:
-`{base_url}/data/klines/[spot|futures|swap|linear-swap|options]/[daily|monthly]/{symbol}/{period}/{file}`
+`{base_url}/data/klines/[spot|future|swap|linear-swap|option]/[daily|monthly]/{symbol}/{period}/{file}`
 </br>such as:</br>
 `https://data.huobi.vision/data/klines/spot/daily/HTUSDT/60min/HTUSDT-60min-2021-01-01.zip`</br>
 `https://data.huobi.vision/data/klines/spot/monthly/HTUSDT/60min/HTUSDT-60min-2021-01.zip`
 </br></br>
 
 ## Trade csv file url as follow:
-`{base_url}/data/trades/[spot|futures|swap|linear-swap|options]/[daily|monthly]/{symbol}/{file}`
+`{base_url}/data/trades/[spot|future|swap|linear-swap|option]/[daily|monthly]/{symbol}/{file}`
 </br>such as:</br>
 `https://data.huobi.vision/data/trades/swap/daily/BTCUSDT/BTCUSDT-trade-2021-01-01.zip`</br>
 `https://data.huobi.vision/data/trades/swap/monthly/BTCUSDT/BTCUSDT-trade-2021-01.zip`
