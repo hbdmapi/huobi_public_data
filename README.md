@@ -25,7 +25,7 @@ The data fields of kline data as same as `/market/trade` REST API interface, and
 | id | price | amount | ts | direction |
 | -- | -- | -- | --| -- |
 | 102176219713 | 4268.68 | 0.0231 | 1620789069405 | buy |
-</br></br>
+</br>
 
 # Future/Swap/Linear-Swap/Option
 * `Kline`
@@ -49,7 +49,7 @@ The data fields of kline data as same as `/market/trade`(Future), `/swap-ex/mark
 | id | price | amount | quantity | direction | ts |
 | -- | -- | -- | --| -- | -- |
 | 958050135700000 | 57657.4 | 62 | 0.1075317305324208167555248762517907502 | buy | 1620790956586 |
-</br></br>
+</br>
 
 # Url formation
 The base url is `https://data.huobi.vision`
