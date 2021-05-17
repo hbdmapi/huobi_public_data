@@ -10,9 +10,9 @@ For user to get historical market data as csv files, such as kline, trade data, 
 ## Kline
 The data fields of kline data as same as `/market/history/kline` REST API interface, and the data fields are as follows:
 
-| id | open | high | low | close | vol | amount | count |
-| -- | -- | -- | -- | -- | -- | -- | -- |
-| 1620748800 | 56047.34 | 57352.06 | 55749.73 | 57042.49 | 5.218369366635794E8 | 9222.601164750704 | 13 |
+| id | open | high | low | close | vol | amount |
+| -- | -- | -- | -- | -- | -- | -- |
+| 1620748800 | 56047.34 | 57352.06 | 55749.73 | 57042.49 | 5.218369366635794E8 | 9222.601164750704 |
 </br>
 
 ## Periods
@@ -34,9 +34,9 @@ The data fields of kline data as same as `/market/trade` REST API interface, and
 ## Kline
 The data fields of kline data as same as `/market/history/kline`(Future), `/swap-ex/market/history/kline`(Swap), `/linear-swap-ex/market/history/kline`(Linear-Swap), `/option-ex/market/history/kline`(Option) REST API interface, and the data fields are as follows:
 
-| id | open | high | low | close | vol | amount | count | trade_turnover |
-| -- | -- | -- | -- | -- | -- | -- | -- | -- |
-| 1620748800 | 56146.4 | 57418.2 | 55868 | 57361.2 | 18101556 | 31926.0045740418288417736911359330675244168 | 20 | 52.3072 |
+| id | open | high | low | close | vol | amount | trade_turnover |
+| -- | -- | -- | -- | -- | -- | -- | -- |
+| 1620748800 | 56146.4 | 57418.2 | 55868 | 57361.2 | 18101556 | 31926.0045740418288417736911359330675244168 |52.3072 |
 </br>
 
 ## Periods
