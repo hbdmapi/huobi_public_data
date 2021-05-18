@@ -27,7 +27,7 @@ downlowd_daily(){
         do
           for d_day in ${all_days[@]}
           do
-            url="${pre_url}/${d_type}/${d_symbol}/${d_period}/${d_symbol}-${d_period}-${d_year}-${d_month}-${d_day}"
+            url="${pre_url}/${d_type}/daily/${d_symbol}/${d_period}/${d_symbol}-${d_period}-${d_year}-${d_month}-${d_day}"
             zip_file="${url}.zip"
             check_file="${url}.CHECKSUM"
 
@@ -61,7 +61,7 @@ downlowd_monthly(){
       do
         for d_month in ${all_months[@]}
         do
-          url="${pre_url}/${d_type}/${d_symbol}/${d_period}/${d_symbol}-${d_period}-${d_year}-${d_month}"
+          url="${pre_url}/${d_type}/monthly/${d_symbol}/${d_period}/${d_symbol}-${d_period}-${d_year}-${d_month}"
           zip_file="${url}.zip"
           check_file="${url}.CHECKSUM"
 
