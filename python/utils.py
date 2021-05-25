@@ -4,7 +4,7 @@ from const import *
 from datetime import timedelta
 import json
 
-just_show = True
+just_show = False
 
 
 def http_download(url: str) -> tuple:
@@ -18,7 +18,7 @@ def http_download(url: str) -> tuple:
     else:
       file_name = os.path.basename(url)
       with open(file_name, 'wb') as f:
-        f.write(data)
+        f.write(data.content)
   except Exception as e:
     return False, str(e)
   return True, None
@@ -180,7 +180,7 @@ def download_daily(path_url, symbol, period, start_date, end_date) -> tuple:
   interval = end_date-start_date
   for index in range(interval.days):
     current = start_date+timedelta(days=index)
-    url = f'{path_url}/{symbol.upper()}-{period}-{current.year}-{current.month}-{current.day}'
+    url = f'{path_url}/{symbol.upper()}-{period}-{current.year}-{current.month:02}-{current.day:02}'
     zip_file = f'{url}.zip'
     check_file = f'{url}.CHECKSUM'
     ok, msg = http_download(zip_file)
@@ -202,7 +202,7 @@ def download_monthly(path_url, symbol, period, start_date, end_date) -> tuple:
   interval = end_date-start_date
   for index in range(interval.days):
     current = start_date+timedelta(days=index)
-    url = f'{path_url}/{symbol.upper()}-{period}-{current.year}-{current.month}'
+    url = f'{path_url}/{symbol.upper()}-{period}-{current.year}-{current.month:02}'
     zip_file = f'{url}.zip'
     check_file = f'{url}.CHECKSUM'
     ok, msg = http_download(zip_file)

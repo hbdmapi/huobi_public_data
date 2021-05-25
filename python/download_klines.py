@@ -41,11 +41,11 @@ def download_daily_option(all_period: list = None, start: datetime = None, end: 
 
 
 if __name__ == "__main__":
-    # download_daily_spot(all_symbols=['btcusdt', 'ltcusdt'],
-    #                     start=datetime(2021, 1, 1),
-    #                     end=datetime(2021, 2, 1),
-    #                     all_period=['1min', '15min', '4hour'])
+    download_daily_spot(all_symbols=['BTCUSDT', 'ADAUSDT'],
+                        start=datetime(2021, 5, 21),
+                        end=datetime(2021, 5, 23),
+                        all_period=['1min', '15min'])
     #download_daily_future()
     #download_daily_swap()
     #download_daily_linearswap()
-    download_daily_option(all_period=['1min'])
+    #download_daily_option(all_period=['1min'])
