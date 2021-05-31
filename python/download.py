@@ -1,7 +1,7 @@
 from const import *
 from utils import *
 
-pre_url = "https://data.huobi.vision/data"
+pre_url = "https://huobi-service-data.s3-ap-northeast-1.amazonaws.com/data"
 
 
 def b_download_daily_spot(data_type: str, all_period: list = None, start: datetime = None, end: datetime = None, all_symbols: list = None):

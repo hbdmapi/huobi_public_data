@@ -44,7 +44,7 @@ def get_all_spot_symbols() -> tuple:
     return False, data['err-msg']
   result = []
   for item in data['data']:
-    result.append(item['symbol'])
+    result.append(item['symbol'].upper())
   return True, result
 
 

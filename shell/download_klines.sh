@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pre_url="https://data.huobi.vision/data/klines"
+pre_url="https://huobi-service-data.s3-ap-northeast-1.amazonaws.com/index.html?prefix=data/klines"
 
 downlowd_daily(){
   d_type=$1 # such as spot/future/swap/linear-swap/option
@@ -76,7 +76,7 @@ downlowd_monthly(){
 # ----------------------------------------------------------------------------
 # test functions]
 test_daily(){
-  downlowd_daily spot ADAUSDT,BTCUSDT 1min,5min 2020,2021 01,02 01,02,03,04,05
+  downlowd_daily spot ADAUSDT,BTCUSDT 1min,5min 2021 05 21,23
 }
 
 test_monthly(){
