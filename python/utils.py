@@ -182,6 +182,7 @@ def download_daily(path_url, symbol, period, start_date, end_date) -> tuple:
     current = start_date+timedelta(days=index)
     url = f'{path_url}/{symbol.upper()}-{period}-{current.year}-{current.month:02}-{current.day:02}'
     zip_file = f'{url}.zip'
+    # print(zip_file)
     check_file = f'{url}.CHECKSUM'
     ok, msg = http_download(zip_file)
     if not ok:

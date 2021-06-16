@@ -11,6 +11,3 @@ OPTION_START_DATE = datetime(2020, 9, 1)
 END_DATE = datetime.now()
 
 ALL_PERIODS = ['1min', '5min', '15min', '30min', '60min', '4hour', '1day']
-
-BASE_URL = 'https://data.huobi.vision/data'
-

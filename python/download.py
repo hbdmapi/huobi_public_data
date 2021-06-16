@@ -1,7 +1,7 @@
 from const import *
 from utils import *
 
-pre_url = "https://huobi-service-data.s3-ap-northeast-1.amazonaws.com/data"
+pre_url = "https://futures.huobi.com/data"
 
 
 def b_download_daily_spot(data_type: str, all_period: list = None, start: datetime = None, end: datetime = None, all_symbols: list = None):
@@ -22,7 +22,10 @@ def b_download_daily_spot(data_type: str, all_period: list = None, start: dateti
             return
     for symbol in all_symbols:
         for period in all_period:
-            path_url = f'{pre_url}/{data_type}/spot/daily/{symbol}/{period}'
+            if period in ['trades',]:
+                path_url = f'{pre_url}/{data_type}/spot/daily/{symbol}'
+            else:
+                path_url = f'{pre_url}/{data_type}/spot/daily/{symbol}/{period}'
             all_oks, all_errs = download_daily(
                 path_url, symbol, period, start, end)
             print(f'success:{all_oks}')
@@ -48,7 +51,10 @@ def b_download_daily_future(data_type: str, all_period: list = None, start: date
             return
     for symbol in all_symbols:
         for period in all_period:
-            path_url = f'{pre_url}/{data_type}/future/daily/{symbol}/{period}'
+            if period in ['trades',]:
+                path_url = f'{pre_url}/{data_type}/future/daily/{symbol}'
+            else:
+                path_url = f'{pre_url}/{data_type}/future/daily/{symbol}/{period}'
             all_oks, all_errs = download_daily(
                 path_url, symbol, period, start, end)
             print(f'success:{all_oks}')
@@ -74,7 +80,10 @@ def b_download_daily_swap(data_type: str, all_period: list = None, start: dateti
             return
     for symbol in all_symbols:
         for period in all_period:
-            path_url = f'{pre_url}/{data_type}/swap/daily/{symbol}/{period}'
+            if period in ['trades',]:
+                path_url = f'{pre_url}/{data_type}/swap/daily/{symbol}'
+            else:
+                path_url = f'{pre_url}/{data_type}/swap/daily/{symbol}/{period}'
             all_oks, all_errs = download_daily(
                 path_url, symbol, period, start, end)
             print(f'success:{all_oks}')
@@ -100,7 +109,10 @@ def b_download_daily_linearswap(data_type: str, all_period: list = None, start: 
             return
     for symbol in all_symbols:
         for period in all_period:
-            path_url = f'{pre_url}/{data_type}/linear-swap/daily/{symbol}/{period}'
+            if period in ['trades',]:
+                path_url = f'{pre_url}/{data_type}/linear-swap/daily/{symbol}'
+            else:
+                path_url = f'{pre_url}/{data_type}/linear-swap/daily/{symbol}/{period}'
             all_oks, all_errs = download_daily(
                 path_url, symbol, period, start, end)
             print(f'success:{all_oks}')
@@ -126,7 +138,10 @@ def b_download_daily_option(data_type: str, all_period: list = None, start: date
             return
     for symbol in all_symbols:
         for period in all_period:
-            path_url = f'{pre_url}/{data_type}/option/daily/{symbol}/{period}'
+            if period in ['trades',]:
+                path_url = f'{pre_url}/{data_type}/option/daily/{symbol}'
+            else:
+                path_url = f'{pre_url}/{data_type}/option/daily/{symbol}/{period}'
             all_oks, all_errs = download_daily(
                 path_url, symbol, period, start, end)
             print(f'success:{all_oks}')
