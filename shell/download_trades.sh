@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pre_url="https://futures.huobi.af/data/trades"
+pre_url="https://futures.huobi.com/data/trades"
 
 downlowd_daily(){
   d_type=$1 # such as spot/future/swap/linear-swap/option
@@ -25,7 +25,7 @@ downlowd_daily(){
         do
           url="${pre_url}/${d_type}/daily/${d_symbol}/${d_symbol}-trades-${d_year}-${d_month}-${d_day}"
           zip_file="${url}.zip"
-          echo $zip_file
+          # echo $zip_file
           check_file="${url}.CHECKSUM"
 
           $(curl -# -O ${zip_file})
