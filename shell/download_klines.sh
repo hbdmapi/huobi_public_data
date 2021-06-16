@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pre_url="https://huobi-service-data.s3-ap-northeast-1.amazonaws.com/index.html?prefix=data/klines"
+pre_url="https://futures.huobi.com/data/klines"
 
 downlowd_daily(){
   d_type=$1 # such as spot/future/swap/linear-swap/option
@@ -27,7 +27,8 @@ downlowd_daily(){
         do
           for d_day in ${all_days[@]}
           do
-            url="${pre_url}/${d_type}/${d_symbol}/${d_period}/${d_symbol}-${d_period}-${d_year}-${d_month}-${d_day}"
+            url="${pre_url}/${d_type}/daily/${d_symbol}/${d_period}/${d_symbol}-${d_period}-${d_year}-${d_month}-${d_day}"
+            # echo $url
             zip_file="${url}.zip"
             check_file="${url}.CHECKSUM"
 
@@ -61,7 +62,7 @@ downlowd_monthly(){
       do
         for d_month in ${all_months[@]}
         do
-          url="${pre_url}/${d_type}/${d_symbol}/${d_period}/${d_symbol}-${d_period}-${d_year}-${d_month}"
+          url="${pre_url}/${d_type}/monthly/${d_symbol}/${d_period}/${d_symbol}-${d_period}-${d_year}-${d_month}"
           zip_file="${url}.zip"
           check_file="${url}.CHECKSUM"
 
