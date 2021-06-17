@@ -58,21 +58,21 @@ The data fields of kline data as same as `/linear-swap-ex/market/trade`(Linear-S
 </br>
 
 # Url formation
-The base url is `https://data.huobi.vision`
+The base url is `https://futures.huobi.com`
 </br></br>
 
 ## Kline csv file url as follow:
 `{base_url}/data/klines/[spot|future|swap|linear-swap|option]/[daily|monthly]/{symbol}/{period}/{file}`
 </br>such as:</br>
-`https://data.huobi.vision/data/klines/spot/daily/HTUSDT/60min/HTUSDT-60min-2021-01-01.zip`</br>
-`https://data.huobi.vision/data/klines/spot/monthly/HTUSDT/60min/HTUSDT-60min-2021-01.zip`
+`https://futures.huobi.com/data/klines/spot/daily/HTUSDT/60min/HTUSDT-60min-2021-01-01.zip`</br>
+`https://futures.huobi.com/data/klines/spot/monthly/HTUSDT/60min/HTUSDT-60min-2021-01.zip`
 </br></br>
 
 ## Trade csv file url as follow:
 `{base_url}/data/trades/[spot|future|swap|linear-swap|option]/[daily|monthly]/{symbol}/{file}`
 </br>such as:</br>
-`https://data.huobi.vision/data/trades/swap/daily/BTCUSDT/BTCUSDT-trade-2021-01-01.zip`</br>
-`https://data.huobi.vision/data/trades/swap/monthly/BTCUSDT/BTCUSDT-trade-2021-01.zip`
+`https://futures.huobi.com/data/trades/swap/daily/BTC-USD/BTC-USD-trades-2021-01-01.zip`</br>
+`https://futures.huobi.com/data/trades/swap/monthly/BTC-USD/BTC-USD-trades-2021-01.zip`
 </br></br>
 
 # How to download
@@ -82,10 +82,10 @@ There are python/shell scripts for one key downloading csv files
 ```shell
 
 # download a single file
-curl -s "https://data.huobi.vision/data/trades/swap/daily/BTCUSDT/BTCUSDT-trade-2021-01-01.zip" -o BTCUSDT-trade-2021-01-01.zip
+curl -s "https://futures.huobi.com/data/trades/linear-swap/daily/BTC-USDT/BTC-USDT-trades-2021-01-01.zip" -o BTC-USDT-trades-2021-01-01.zip
 
 # or
-wget "https://data.huobi.vision/data/trades/swap/daily/BTCUSDT/BTCUSDT-trade-2021-01-01.zip"
+wget "https://futures.huobi.com/data/trades/linear-swap/daily/BTC-USDT/BTC-USDT-trades-2021-01-01.zip"
 ```
 </br></br>
 
@@ -94,8 +94,8 @@ Each zip file has a check key to check the integrity of the file.
 
 ```shell
 # From Linux, sha256sum -c <zip_file_name.CHECKSUM>
-sha256sum -c BTCUSDT-trade-2021-01-01.zip.CHECKSUM
+sha256sum -c BTC-USDT-trades-2021-01-01.CHECKSUM
 
 # From MacOS
-shasum -a 256 -c BTCUSDT-trade-2021-01-01.zip.CHECKSUM
+shasum -a 256 -c BTC-USDT-trades-2021-01-01.CHECKSUM
 ```
